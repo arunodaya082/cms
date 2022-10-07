@@ -24,6 +24,23 @@ const AddCustomer = () => {
 
     const onsubmit= async e=>{
 
+
+
+        if(customerDetail.firstname.trim() === "" ){
+           alert("enter first name")
+            return false;
+          }
+
+          if(customerDetail.lastname.trim() === "" ){
+            alert("enter last name")
+             return false;
+           }
+
+           if(customerDetail.email.trim() === "" ){
+            alert("enter email")
+             return false;
+           }
+
         e.preventDefault()
         try{
             await axios.post(url, customerDetail)

@@ -7,10 +7,6 @@ import axios from "axios";
 const EditCustomer = () => {
 
 
-   
-
-
-
      const [customerDetail,setCustomerDetail] = useState({
         firstname: "",
         lastname: "",
@@ -36,6 +32,21 @@ const EditCustomer = () => {
     console.log("ws",url)
 
     const onsubmit= async e=>{
+
+        if(customerDetail.firstname.trim() === "" ){
+            alert("enter first name")
+             return false;
+           }
+ 
+           if(customerDetail.lastname.trim() === "" ){
+             alert("enter last name")
+              return false;
+            }
+ 
+            if(customerDetail.email.trim() === "" ){
+             alert("enter email")
+              return false;
+            }
 
         e.preventDefault()
         try{
