@@ -109,6 +109,8 @@ const CustomerList = () => {
 
     const onhandleDelete= async (id)=>{
 
+
+
       try{
         await axios.delete(url+id);
         window.location.reload();
@@ -172,7 +174,7 @@ const CustomerList = () => {
                 Update
             </Button>| 
             <Button
-            onClick={()=> onhandleDelete(user.id)}>
+            onClick={()=>{if(window.confirm('Are you sure to delete this data?')){ this.onhandleDelete(user.id);}}}>
                 Delete
             </Button>
         </TableCell>
