@@ -113,6 +113,7 @@ const CustomerList = () => {
 
       try{
         await axios.delete(url+id);
+        alert('Customer Deleted Successfully')
         window.location.reload();
       }catch(err){
         console.log(err);
@@ -174,7 +175,7 @@ const CustomerList = () => {
                 Update
             </Button>| 
             <Button
-            onClick={()=>{if(window.confirm('Are you sure to delete this data?')){ this.onhandleDelete(user.id);}}}>
+            onClick={()=>{if(window.confirm('Are you sure to delete this data?')){onhandleDelete(user.id);}}}>
                 Delete
             </Button>
         </TableCell>

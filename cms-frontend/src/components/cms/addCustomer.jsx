@@ -44,6 +44,7 @@ const AddCustomer = () => {
         e.preventDefault()
         try{
             await axios.post(url, customerDetail)
+            alert('Customer Added Successfully')
             navigate("/")
         }catch(err){
             console.log(err);

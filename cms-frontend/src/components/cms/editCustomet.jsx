@@ -52,6 +52,7 @@ const EditCustomer = () => {
         try{
             await axios.put(url, customerDetail)
             navigate("/")
+            alert('Customer Updated Successfully')
 
         }catch(err){
             console.log(err);
